@@ -27,6 +27,7 @@
 /* ===== Use points on next renewal ===== */
 .freya-ywpar-renewal-points {
   margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e4e4e0;
+  align-items: flex-start;
 }
 /* explicit font-size beats global "h3 { font-size: var(--h3) }" and removes the title→intro gap */
 .freya-ywpar-renewal-points h3 {
