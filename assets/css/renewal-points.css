@@ -1,0 +1,232 @@
+/*!/wp-content/plugins/freya-ywpar-subscriptions/assets/css/renewal-points.css*/
+
+/* ===== Manage Points tab — shared width ===== */
+.ywpar_tabcontent.active { max-width: 720px; }
+
+/* ===== Convert Points into a coupon code (YITH markup — style only) ===== */
+#share_points h3 { font-size: 25px; line-height: 1.2; margin-bottom: .35em; }
+#share_points > p { color: #555; margin-bottom: 1.5rem; }
+#share_points form#ywpar-share-points {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .6rem .75rem;
+  padding: 1.25rem; background: #f7f7f5;
+  border: 1px solid #e4e4e0; border-radius: 12px;
+}
+#share_points form#ywpar-share-points > span:first-of-type { font-weight: 600; }
+#share_points #ywpar_share_points_to_share {
+  width: 110px; padding: .55rem .7rem;
+  border: 1px solid #cfcfca; border-radius: 8px; font: inherit;
+}
+#share_points .worth-price { font-weight: 600; }
+#share_points input#ywpar-share-points__submit {
+  margin-left: 0 !important; padding: .6rem 1.4rem; border: 0; border-radius: 999px;
+  background: #1f1f1f !important; color: #fff !important; font-weight: 600 !important; cursor: pointer !important;
+}
+#share_points input#ywpar-share-points__submit:hover { background: #000; }
+#share_points .ywpar-share-points-error span { font-size: .85rem; color: #b42318; }
+
+/* ===== Use points on next renewal ===== */
+.freya-ywpar-renewal-points {
+  margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e4e4e0;
+}
+/* explicit font-size beats global "h3 { font-size: var(--h3) }" and removes the title→intro gap */
+.freya-ywpar-renewal-points h3 {
+  font-size: 25px; line-height: 1.2; margin-bottom: .4em;
+}
+.freya-ywpar-renewal-points__intro {
+  color: #555; max-width: 60ch; margin-bottom: 1.5rem; line-height: 1.5;
+}
+
+/* the panel is the single card wrapping field + summary + loaded + load form */
+.freya-ywpar-renewal-points__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px;
+  font-size: 16px;
+  background: #f7f7f5;
+  border: 1px solid #e4e4e0;
+  border-radius: 12px;
+}
+
+/* load form no longer needs its own card — it sits inside the panel */
+.freya-ywpar-renewal-points__form--load {
+  display: flex; flex-direction: column; gap: 1rem;
+  padding: 0; background: none; border: 0; border-radius: 0;
+}
+
+.freya-ywpar-renewal-points__field {
+  display: flex; flex-direction: column; align-items: flex-start; gap: .4rem;
+}
+.freya-ywpar-renewal-points__field label {
+  font-weight: 600;
+  font-size: 15px;
+  text-align: left;
+  color: #000;
+}
+
+.freya-ywpar-renewal-points select,
+.freya-ywpar-renewal-points input[type="number"] {
+  font-size: 16px;
+  padding: 11px 12px;
+  border: 1px solid #cfcfca;
+  border-radius: 8px;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+.freya-ywpar-renewal-points input[type="number"] { max-width: 200px; }
+
+.freya-ywpar-renewal-points__worth {
+	margin: 0;
+	font-size: 15px;
+	color: #555;
+}
+
+.freya-ywpar-renewal-points__worth-price {
+	font-weight: 600;
+	color: #1f1f1f;
+}
+
+.freya-ywpar-renewal-points__summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 24px;
+  overflow: hidden;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid #e4e4e0;
+  border-radius: 8px;
+  font-size: 15px;
+}
+.freya-ywpar-renewal-points__summary span { color: #555; }
+.freya-ywpar-renewal-points__summary strong { color: #1f1f1f; }
+
+.freya-ywpar-renewal-points__status {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #e7f6ec;
+  color: #1a7f43;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+
+/* "already loaded" state (shown when points are reserved) */
+.freya-ywpar-renewal-points__loaded p {
+  font-size: 15px;
+  margin: 0 0 12px;
+  color: #1f1f1f;
+}
+
+/* primary submit */
+.freya-ywpar-renewal-points__form--load button,
+.freya-ywpar-renewal-points__form--load .button {
+  align-self: flex-start;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: 0;
+  border-radius: 999px;
+  background: #1f1f1f;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.freya-ywpar-renewal-points__form--load .button:hover,
+.freya-ywpar-renewal-points__form--load button:hover { background: #000; }
+
+/* secondary "remove" button (in the __loaded state) */
+.freya-ywpar-renewal-points__remove {
+  align-self: flex-start;
+  font-size: 15px;
+  padding: 9px 18px;
+  border: 1px solid #cfcfca;
+  border-radius: 999px;
+  background: #fff;
+  color: #1f1f1f;
+  font-weight: 600;
+  cursor: pointer;
+}
+.freya-ywpar-renewal-points__remove:hover { background: #f2f2f0; }
+.freya-ywpar-renewal-points {
+	gap: 0;
+}
+.ywpar_banner_content h3 {
+	font-size: 25px; line-height: 1.2; margin-bottom: .4em;
+}
+.ywpar_banner_content h4 {
+	letter-spacing: 0;
+}
+
+@media (max-width: 600px) {
+	#share_points {
+		padding: 15px !important;
+	}
+
+	.freya-ywpar-renewal-points__panel {
+		padding: 10px;
+	}
+}
+
+#share_points #ywpar_share_points_to_share {
+	text-align: left;
+}
+
+/* ===== Points history table — responsive stacked cards on mobile ===== */
+@media (max-width: 768px) {
+	table.shop_table.ywpar_points_rewards { border: 0; }
+  
+	/* visually hide the header row (still accessible to screen readers) */
+	table.shop_table.ywpar_points_rewards thead {
+	  position: absolute;
+	  width: 1px; height: 1px;
+	  padding: 0; margin: -1px;
+	  overflow: hidden;
+	  clip: rect(0 0 0 0);
+	  white-space: nowrap;
+	  border: 0;
+	}
+  
+	/* each row becomes a card */
+	table.shop_table.ywpar_points_rewards tr {
+	  display: block;
+	  margin-bottom: 12px;
+	  padding: 14px 16px;
+	  background: #fff;
+	  border: 1px solid #e4e4e0;
+	  border-radius: 10px;
+	}
+  
+	/* each cell becomes a label / value row */
+	table.shop_table.ywpar_points_rewards td {
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: baseline;
+	  gap: 16px;
+	  padding: 6px 0;
+	  border: 0;
+	  width: auto !important;
+	  text-align: right;
+	  font-size: 15px;
+	}
+	table.shop_table.ywpar_points_rewards td + td {
+	  border-top: 1px solid #f0f0ee;
+	}
+  
+	/* pull the column name in as the label */
+	table.shop_table.ywpar_points_rewards td::before {
+	  content: attr(data-title);
+	  flex-shrink: 0;
+	  text-align: left;
+	  font-size: 13px;
+	  font-weight: 600;
+	  color: #555;
+	  text-transform: uppercase;
+	  letter-spacing: .02em;
+	}
+  }
+
+  .ywpar_tabcontent #ywpar_banner .banner_header h3  {
+	font-size: 25px !important; line-height: 1.2 !important; margin-bottom: .4em !important; font-weight: 400 !important;
+  }
