@@ -1,5 +1,9 @@
 /*!/wp-content/plugins/freya-ywpar-subscriptions/assets/css/renewal-points.css*/
 
+.ywpar_myaccount_entry_info {
+  margin-top: 20px;
+}
+
 /* ===== Manage Points tab — shared width ===== */
 .ywpar_tabcontent.active { max-width: 720px; }
 
@@ -23,6 +27,7 @@
 }
 #share_points input#ywpar-share-points__submit:hover { background: #000; }
 #share_points .ywpar-share-points-error span { font-size: .85rem; color: #b42318; }
+#share_points span.error.show { font-size: 16px; }
 
 /* ===== Use points on next renewal ===== */
 .freya-ywpar-renewal-points {
