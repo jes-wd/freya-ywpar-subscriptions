@@ -1,0 +1,25 @@
+.freya-ywpar-delete-shared-coupon {
+	padding: 0.45rem 0.9rem;
+	border: 1px solid #cfcfca;
+	border-radius: 999px;
+	background: #fff;
+	color: #1b2440;
+	font: inherit;
+	font-size: 13px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.freya-ywpar-delete-shared-coupon:hover,
+.freya-ywpar-delete-shared-coupon:focus {
+	background: #f7f7f5;
+}
+
+.freya-ywpar-delete-shared-coupon:disabled {
+	opacity: 0.6;
+	cursor: wait;
+}
+
+.freya-ywpar-delete-shared-coupon__empty {
+	color: #999;
+}

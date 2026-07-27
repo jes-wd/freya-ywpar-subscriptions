@@ -1,0 +1,118 @@
+/*!/wp-content/plugins/freya-theme-logic/assets/css/my-account-referral.css*/
+
+.freya-my-account-referral {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  max-width: 720px;
+  margin: 20px 0 2rem;
+  padding: 1.5rem;
+  background: #f7f7f5;
+  border: 1px solid #e4e4e0;
+  border-radius: 12px;
+}
+
+.freya-my-account-referral h3 {
+  font-size: 25px;
+  line-height: 1.2;
+  margin: 0 0 0.4em;
+  font-weight: 400;
+}
+
+.freya-my-account-referral .fr-share-points-amt {
+  color: #16a96b;
+}
+
+.freya-my-account-referral__copy {
+  color: #555;
+  margin: 0 0 1.25rem;
+  line-height: 1.5;
+  max-width: 60ch;
+}
+
+.freya-my-account-referral__linkbox {
+  display: flex;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+.freya-my-account-referral__copy-row {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.freya-my-account-referral__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid #cfcfca;
+  border-radius: 8px;
+  background: #fff;
+  font: inherit;
+  color: #1f1f1f;
+}
+
+.freya-my-account-referral__input:focus {
+  outline: 2px solid #1b2440;
+  outline-offset: 1px;
+}
+
+.freya-my-account-referral__copy-btn {
+  flex: 0 0 auto;
+  padding: 0.75rem 1.25rem;
+  border: 0;
+  border-radius: 999px;
+  background: #1b2440;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.freya-my-account-referral__copy-btn:hover {
+  background: #131a30;
+}
+
+.freya-my-account-referral__copied-msg {
+  font-size: 15px;
+  font-weight: 600;
+  color: #16a96b;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.freya-my-account-referral__copied-msg.is-visible {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .freya-my-account-referral {
+    padding: 1rem;
+  }
+
+  .freya-my-account-referral__linkbox {
+    flex-direction: column;
+  }
+
+  .freya-my-account-referral__copy-row {
+    width: 100%;
+  }
+
+  .freya-my-account-referral__copy-btn {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .freya-my-account-referral__copy-btn,
+  .freya-my-account-referral__copied-msg {
+    transition: none;
+  }
+}

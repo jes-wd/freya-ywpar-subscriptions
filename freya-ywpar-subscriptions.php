@@ -2,14 +2,14 @@
 /**
  * Plugin Name: Freya YITH Points — Subscription Renewals
  * Description: Load YITH points onto the next WooCommerce Subscription renewal and block referral rewards on renewals.
- * Version:     1.0.17
+ * Version:     1.1.1
  * Author:      Freya
  * Requires Plugins: woocommerce, woocommerce-subscriptions, yith-woocommerce-points-and-rewards-premium
  */
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'FREYA_YWPAR_SUB_VERSION', '1.0.17' );
+define( 'FREYA_YWPAR_SUB_VERSION', '1.1.1' );
 define( 'FREYA_YWPAR_SUB_FILE', __FILE__ );
 define( 'FREYA_YWPAR_SUB_PATH', plugin_dir_path( __FILE__ ) );
 define( 'FREYA_YWPAR_SUB_URL', plugin_dir_url( __FILE__ ) );
@@ -33,7 +33,11 @@ function freya_ywpar_subscriptions_init() {
 	require_once FREYA_YWPAR_SUB_PATH . 'includes/class-freya-ywpar-referral-guard.php';
 	require_once FREYA_YWPAR_SUB_PATH . 'includes/class-freya-ywpar-zero-order-guard.php';
 	require_once FREYA_YWPAR_SUB_PATH . 'includes/class-freya-ywpar-settings-portability.php';
+	require_once FREYA_YWPAR_SUB_PATH . 'includes/freya-ywpar-thankyou.php';
+	require_once FREYA_YWPAR_SUB_PATH . 'includes/freya-ywpar-checkout.php';
+	require_once FREYA_YWPAR_SUB_PATH . 'includes/freya-ywpar-referral.php';
 	require_once FREYA_YWPAR_SUB_PATH . 'includes/class-freya-ywpar-my-account.php';
+	require_once FREYA_YWPAR_SUB_PATH . 'includes/class-freya-ywpar-share-coupons.php';
 
 	Freya_YWPAR_Renewal_Manager::instance();
 	Freya_YWPAR_Affiliate_Guard::instance();
@@ -41,6 +45,7 @@ function freya_ywpar_subscriptions_init() {
 	Freya_YWPAR_Zero_Order_Guard::instance();
 	Freya_YWPAR_Settings_Portability::instance();
 	Freya_YWPAR_My_Account::instance();
+	Freya_YWPAR_Share_Coupons::instance();
 }
 
 add_action( 'plugins_loaded', 'freya_ywpar_subscriptions_init', 99 );

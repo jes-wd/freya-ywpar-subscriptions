@@ -32,6 +32,15 @@ class Freya_YWPAR_My_Account {
 			return;
 		}
 
+		if ( class_exists( 'YITH_WC_Points_Rewards_Share_Points' ) && YITH_WC_Points_Rewards_Share_Points::is_enabled() ) {
+			wp_enqueue_style(
+				'freya-ywpar-share-coupons',
+				FREYA_YWPAR_SUB_URL . 'assets/css/share-coupons.css',
+				array(),
+				FREYA_YWPAR_SUB_VERSION
+			);
+		}
+
 		wp_enqueue_style(
 			'freya-ywpar-renewal-points',
 			FREYA_YWPAR_SUB_URL . 'assets/css/renewal-points.css',
@@ -51,9 +60,13 @@ class Freya_YWPAR_My_Account {
 			'freya-ywpar-renewal-points',
 			'freyaYwparRenewal',
 			array(
-				'ajaxUrl'    => admin_url( 'admin-ajax.php' ),
-				'customerId' => (string) get_current_user_id(),
-				'shareNonce' => wp_create_nonce( 'ywpar_share_points' ),
+				'ajaxUrl'              => admin_url( 'admin-ajax.php' ),
+				'customerId'           => (string) get_current_user_id(),
+				'shareNonce'           => wp_create_nonce( 'ywpar_share_points' ),
+				'deleteCouponNonce'    => wp_create_nonce( 'freya_ywpar_delete_shared_coupon' ),
+				'deleteCouponConfirm'  => __( 'Delete this coupon and restore the points to your account?', 'freya-ywpar-subscriptions' ),
+				'deleteCouponDeleting' => __( 'Deleting…', 'freya-ywpar-subscriptions' ),
+				'deleteCouponError'    => __( 'Could not delete this coupon. Please try again.', 'freya-ywpar-subscriptions' ),
 			)
 		);
 	}
