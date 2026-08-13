@@ -1,15 +1,15 @@
 <?php
 /**
  * Plugin Name: Freya YITH Points — Subscription Renewals
- * Description: Load YITH points onto the next WooCommerce Subscription renewal and block referral rewards on renewals.
- * Version:     1.1.1
+ * Description: Load YITH points onto the next WooCommerce Subscription renewal and keep referral purchase meta on first orders only.
+ * Version:     1.1.2
  * Author:      Freya
  * Requires Plugins: woocommerce, woocommerce-subscriptions, yith-woocommerce-points-and-rewards-premium
  */
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'FREYA_YWPAR_SUB_VERSION', '1.1.1' );
+define( 'FREYA_YWPAR_SUB_VERSION', '1.1.2' );
 define( 'FREYA_YWPAR_SUB_FILE', __FILE__ );
 define( 'FREYA_YWPAR_SUB_PATH', plugin_dir_path( __FILE__ ) );
 define( 'FREYA_YWPAR_SUB_URL', plugin_dir_url( __FILE__ ) );
